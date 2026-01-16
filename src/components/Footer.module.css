@@ -1,0 +1,102 @@
+.footer {
+    background: var(--text-primary);
+    color: #fff;
+    padding: 6rem 0 2rem;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6rem;
+    gap: 4rem;
+}
+
+.brand {
+    max-width: 300px;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.brand p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+}
+
+.links {
+    display: flex;
+    gap: 6rem;
+}
+
+.group h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 1.5rem;
+}
+
+.group a {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    transition: color 0.3s ease;
+}
+
+.group a:hover {
+    color: var(--accent);
+}
+
+.bottom {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.socials {
+    display: flex;
+    gap: 2rem;
+}
+
+.socials a:hover {
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .top {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .links {
+        gap: 3rem;
+        flex-wrap: wrap;
+    }
+
+    .bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+}

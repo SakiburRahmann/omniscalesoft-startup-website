@@ -1,0 +1,125 @@
+.section {
+    padding: var(--section-padding);
+    background: #fff;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.sectionTitle {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.sectionSubtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.card {
+    position: relative;
+    background: var(--bg-primary);
+    padding: 4rem;
+    border-radius: 24px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.cardContent {
+    position: relative;
+    z-index: 2;
+}
+
+.icon {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.card h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.card p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.list {
+    list-style: none;
+    margin-bottom: 3rem;
+}
+
+.list li {
+    font-size: 1rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+}
+
+.list li::before {
+    content: '→';
+    color: var(--accent);
+    margin-right: 0.75rem;
+}
+
+.link {
+    background: transparent;
+    border: none;
+    color: var(--accent);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    transition: letter-spacing 0.3s ease;
+}
+
+.link:hover {
+    letter-spacing: 0.05em;
+}
+
+.decoration {
+    position: absolute;
+    bottom: -1rem;
+    right: -1rem;
+    font-size: 8rem;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.03);
+    user-select: none;
+    pointer-events: none;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 3rem;
+    }
+}
