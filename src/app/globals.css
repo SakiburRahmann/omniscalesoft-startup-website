@@ -1,15 +1,22 @@
 :root {
-  --bg-primary: #fafafa;
-  --text-primary: #1e293b;
-  --text-secondary: #475569;
-  --accent: #0891b2;
-  --accent-soft: #ecfeff;
-  --surface: #ffffff;
-  --border-color: #e2e8f0;
-  
+  --background: #020617;
+  /* Slate 950 - Deepest Blue/Black */
+  --surface: #0f172a;
+  /* Slate 900 - Card Surface */
+  --surface-highlight: #1e293b;
+  /* Slate 800 - Hover State */
+  --text-primary: #f8fafc;
+  /* Slate 50 */
+  --text-secondary: #94a3b8;
+  /* Slate 400 */
+  --accent: #22d3ee;
+  /* Cyan 400 - Electric Pop */
+  --accent-glow: rgba(34, 211, 238, 0.25);
+  --border-color: rgba(255, 255, 255, 0.08);
+
   --font-sans: var(--font-inter);
   --font-serif: var(--font-playfair);
-  
+
   --max-width: 1200px;
   --section-padding: 8rem 2rem;
 }
@@ -28,13 +35,41 @@ body {
 
 body {
   color: var(--text-primary);
-  background: var(--bg-primary);
+  background: var(--background);
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, .serif {
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface-highlight);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Global Selection Style */
+::selection {
+  background: var(--accent);
+  color: var(--background);
+}
+
+h1,
+h2,
+h3,
+h4,
+.serif {
   font-family: var(--font-serif), serif;
   font-weight: 700;
   line-height: 1.2;
