@@ -1,0 +1,127 @@
+.main {
+    padding-top: 120px;
+    min-height: 100vh;
+    background: var(--background);
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 0 2rem;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: -0.03em;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+}
+
+.splitLayout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex: 1;
+    /* Fill remaining height */
+    border-top: 1px solid var(--border-color);
+}
+
+.section {
+    padding: 6rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: background 0.3s ease;
+    cursor: pointer;
+    border-right: 1px solid var(--border-color);
+}
+
+.section:last-child {
+    border-right: none;
+}
+
+.section:hover {
+    background: #fafafa;
+}
+
+/* Specific styling for Talent section to differentiate */
+.section.talent:hover {
+    background: #111;
+    color: #fff;
+}
+
+.section.talent:hover h2,
+.section.talent:hover p {
+    color: #fff;
+}
+
+.label {
+    font-family: monospace;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
+    opacity: 0.6;
+}
+
+.section h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.section p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 400px;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    transition: color 0.3s;
+}
+
+.button {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.section:hover .button {
+    border-color: #000;
+    background: #000;
+    color: #fff;
+}
+
+.section.talent:hover .button {
+    border-color: #fff;
+    background: #fff;
+    color: #000;
+}
+
+@media (max-width: 768px) {
+    .splitLayout {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 4rem 2rem;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+}
