@@ -10,6 +10,7 @@ const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-serif'
 export const metadata: Metadata = {
     title: 'OmniScaleSoft | Software that Scales',
     description: 'Premium software solutions for startups and enterprise.',
+    viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
 }
 
 export default function RootLayout({
