@@ -2,7 +2,6 @@
     position: fixed;
     top: 1.5rem;
     left: 50%;
-    transform: translateX(-50%);
     width: calc(100% - 3rem);
     max-width: var(--max-width);
     height: 4.5rem;
@@ -75,7 +74,9 @@
         display: none;
         /* Mobile menu needed later */
     }
-}@media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .links {
         display: none;
     }
@@ -83,7 +84,7 @@
     .mobileToggle {
         display: flex;
     }
-    
+
     .nav {
         flex-direction: column;
         height: auto;
@@ -141,4 +142,3 @@
     font-size: 1.1rem;
     font-weight: 500;
 }
-
