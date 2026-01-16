@@ -1,31 +1,54 @@
-export default function Method() {
-    return (
-        <main style={{ paddingTop: '8rem', paddingBottom: '4rem', maxWidth: 'var(--max-width)', margin: '0 auto', paddingLeft: '2rem', paddingRight: '2rem' }}>
-            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '3rem', color: 'var(--text-primary)', marginBottom: '1.5rem' }}>
-                The OmniScale <span style={{ color: 'var(--accent)' }}>Method</span>
-            </h1>
-            <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', maxWidth: '800px', lineHeight: '1.6' }}>
-                Our proven methodology ensures consistency, quality, and speed. We don't just write code; we engineer success.
-            </p>
+'use client'
 
-            <div style={{ marginTop: '4rem' }}>
-                <MethodStep number="01" title="Analyze" description="Deep dive into requirements and business goals." />
-                <MethodStep number="02" title="Architect" description="Designing scalable systems and data structures." />
-                <MethodStep number="03" title="Build" description="Agile development with rigorous testing." />
-                <MethodStep number="04" title="Scale" description="Deployment, monitoring, and growth optimization." />
+import styles from './page.module.css'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { useRef } from 'react'
+
+export default function Method() {
+    const containerRef = useRef(null)
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end end"]
+    })
+
+    const steps = [
+        { id: '01', title: 'Deep Discovery', desc: 'We don’t just take orders. We challenge assumptions. We spend the first 2 weeks embedding with your team to uncover the "why" behind the "what".', tags: ['User Research', 'Market Analysis', 'Technical Audit'] },
+        { id: '02', title: 'System Architecture', desc: 'Before a single line of code is written, we design the nervous system of your application. Scale, security, and redundancy are baked in from the whiteboard phase.', tags: ['AWS/GCP', 'Microservices', 'Database Schema'] },
+        { id: '03', title: 'Agile Development', desc: 'We work in rigorous 2-week sprints. You see working software every 14 days. No black boxes. No surprises. Just consistent, shippable value.', tags: ['CI/CD', 'TDD', 'Code Reviews'] },
+        { id: '04', title: 'Launch & Scale', desc: 'Go-live is just the beginning. We set up comprehensive monitoring, error tracking, and analytics to ensure your system performs under real-world load.', tags: ['Datadog', 'Sentry', 'Auto-scaling'] }
+    ]
+
+    return (
+        <main className={styles.main} ref={containerRef}>
+            <section className={styles.intro}>
+                <h1>Our Methodology.</h1>
+                <p>A transparent, engineering-led process designed to mitigate risk and maximize ROI.</p>
+            </section>
+
+            <div className={styles.timelineContainer}>
+                <motion.div style={{ scaleY: scrollYProgress }} className={styles.progressBar} />
+
+                {steps.map((step, index) => (
+                    <motion.div
+                        key={step.id}
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ margin: "-20% 0px -20% 0px" }}
+                        transition={{ duration: 0.6 }}
+                        className={styles.step}
+                    >
+                        <div className={styles.marker}></div>
+                        <div className={styles.stepContent}>
+                            <span className={styles.number}>{step.id}</span>
+                            <h2>{step.title}</h2>
+                            <p>{step.desc}</p>
+                            <div className={styles.tags}>
+                                {step.tags.map(tag => <span key={tag}>{tag}</span>)}
+                            </div>
+                        </div>
+                    </motion.div>
+                ))}
             </div>
         </main>
-    )
-}
-
-function MethodStep({ number, title, description }: { number: string, title: string, description: string }) {
-    return (
-        <div style={{ display: 'flex', gap: '2rem', marginBottom: '3rem', alignItems: 'flex-start' }}>
-            <span style={{ fontSize: '4rem', fontWeight: '700', color: 'var(--accent)', opacity: 0.2, lineHeight: 1 }}>{number}</span>
-            <div>
-                <h3 style={{ fontSize: '2rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>{title}</h3>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem' }}>{description}</p>
-            </div>
-        </div>
     )
 }

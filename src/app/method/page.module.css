@@ -1,0 +1,157 @@
+.main {
+    padding-top: 120px;
+    background: var(--background);
+    min-height: 200vh;
+    /* Allow scroll */
+}
+
+.intro {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
+    text-align: center;
+}
+
+.intro h1 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    color: #000;
+}
+
+.intro p {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.timelineContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 10rem;
+}
+
+.progressBar {
+    position: absolute;
+    left: 2rem;
+    /* Align track */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #000;
+    transform-origin: top;
+    z-index: 10;
+}
+
+/* Faint background line */
+.timelineContainer::before {
+    content: '';
+    position: absolute;
+    left: 2rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #eee;
+    z-index: 1;
+}
+
+.step {
+    display: flex;
+    gap: 4rem;
+    margin-bottom: 8rem;
+    position: relative;
+    padding-left: 2rem;
+    /* Space for line */
+    opacity: 0.3;
+    /* Default fade */
+    transition: opacity 0.5s ease;
+}
+
+.step:last-child {
+    margin-bottom: 0;
+}
+
+/* Highlight active step if needed, handled by framer mostly */
+
+.marker {
+    position: absolute;
+    left: 1.6rem;
+    /* Center on line (2rem left + 2px width/2 approx) - adjusted visually */
+    left: calc(2rem - 5px);
+    width: 12px;
+    height: 12px;
+    background: #000;
+    border-radius: 50%;
+    top: 0;
+    z-index: 20;
+    border: 2px solid #fff;
+}
+
+.stepContent {
+    background: #fff;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    width: 100%;
+}
+
+.number {
+    font-family: monospace;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.stepContent h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #000;
+}
+
+.stepContent p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tags span {
+    background: #f5f5f7;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .intro h1 {
+        font-size: 3rem;
+    }
+
+    .timelineContainer {
+        padding: 0 1rem;
+    }
+
+    .step {
+        gap: 2rem;
+    }
+
+    .progressBar {
+        left: 1rem;
+    }
+
+    .timelineContainer::before {
+        left: 1rem;
+    }
+
+    .marker {
+        left: calc(1rem - 5px);
+    }
+}
