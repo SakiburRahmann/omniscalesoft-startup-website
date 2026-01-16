@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero'
-import DualService from '@/components/DualService'
+import TrustedBy from '@/components/TrustedBy'
+import BentoGrid from '@/components/BentoGrid'
 import Methodology from '@/components/Methodology'
 import TechStack from '@/components/TechStack'
 
@@ -7,7 +8,8 @@ export default function Home() {
     return (
         <main>
             <Hero />
-            <DualService />
+            <TrustedBy />
+            <BentoGrid />
             <Methodology />
             <TechStack />
         </main>

@@ -27,8 +27,8 @@ export default function Hero() {
                         transition={{ delay: 0.2, duration: 0.8 }}
                         className={styles.title}
                     >
-                        Software that <span>Scales</span> <br />
-                        with Your Ambition.
+                        Engineering <br />
+                        the <span>Future</span>.
                     </motion.h1>
 
                     <motion.p
@@ -37,8 +37,8 @@ export default function Hero() {
                         transition={{ delay: 0.4 }}
                         className={styles.description}
                     >
-                        OmniScaleSoft builds world-class digital products and robust custom software.
-                        From innovative startups to enterprise-scale systems, we architect for the future.
+                        We build high-performance software for ambitious companies.
+                        Precision-engineered, scalable, and designed to win.
                     </motion.p>
 
                     <motion.div
@@ -47,8 +47,8 @@ export default function Hero() {
                         transition={{ delay: 0.6 }}
                         className={styles.actions}
                     >
-                        <button className={styles.primary}>Build your vision</button>
-                        <button className={styles.secondary}>Explore our work</button>
+                        <button className={styles.primary}>Start Building</button>
+                        <button className={styles.secondary}>View Methodology</button>
                     </motion.div>
                 </motion.div>
 
