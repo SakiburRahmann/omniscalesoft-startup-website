@@ -124,12 +124,10 @@
 
 .mobileMenu {
     position: fixed;
-    /* Fixed to cover screen */
     top: 80px;
     left: 0;
     width: 100%;
     height: calc(100vh - 80px);
-    /* Full height minus header */
     background: #fff;
     border-top: 1px solid var(--border-color);
     overflow-y: auto;
@@ -137,7 +135,25 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 0;
-    z-index: 999;
+    z-index: 2000;
+}
+
+@media (max-width: 768px) {
+    .links {
+        display: none;
+    }
+
+    .mobileToggle {
+        display: flex !important;
+        pointer-events: auto;
+    }
+
+    .nav {
+        flex-direction: column;
+        height: auto;
+        min-height: 80px;
+        background: rgba(255, 255, 255, 1);
+    }
 }
 
 .mobileMenu a {
