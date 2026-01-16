@@ -1,0 +1,61 @@
+.visualSvg {
+    width: 100%;
+    height: 100%;
+    max-height: 250px;
+}
+
+.terminal {
+    background: #1e1e1e;
+    border-radius: 6px;
+    padding: 1rem;
+    font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: #e0e0e0;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.terminalHeader {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #555;
+}
+
+.dot:nth-child(1) {
+    background: #ff5f56;
+}
+
+.dot:nth-child(2) {
+    background: #ffbd2e;
+}
+
+.dot:nth-child(3) {
+    background: #27c93f;
+}
+
+.terminalBody p {
+    margin: 4px 0;
+    line-height: 1.4;
+}
+
+.success {
+    color: #4ade80;
+}
+
+.cursor {
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}

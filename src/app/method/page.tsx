@@ -3,6 +3,7 @@
 import styles from './page.module.css'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
+import { NodeGraph, ArchitectureSchematic, CICDPipeline, LoadBalancer } from '@/components/SystemVisuals'
 
 export default function Method() {
     const containerRef = useRef(null)
@@ -38,12 +39,22 @@ export default function Method() {
                         className={styles.step}
                     >
                         <div className={styles.marker}></div>
-                        <div className={styles.stepContent}>
-                            <span className={styles.number}>{step.id}</span>
-                            <h2>{step.title}</h2>
-                            <p>{step.desc}</p>
-                            <div className={styles.tags}>
-                                {step.tags.map(tag => <span key={tag}>{tag}</span>)}
+
+                        <div className={styles.contentWrapper}>
+                            <div className={styles.stepContent}>
+                                <span className={styles.number}>{step.id}</span>
+                                <h2>{step.title}</h2>
+                                <p>{step.desc}</p>
+                                <div className={styles.tags}>
+                                    {step.tags.map(tag => <span key={tag}>{tag}</span>)}
+                                </div>
+                            </div>
+
+                            <div className={styles.visualContainer}>
+                                {index === 0 && <NodeGraph />}
+                                {index === 1 && <ArchitectureSchematic />}
+                                {index === 2 && <CICDPipeline />}
+                                {index === 3 && <LoadBalancer />}
                             </div>
                         </div>
                     </motion.div>

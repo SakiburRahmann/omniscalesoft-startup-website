@@ -47,8 +47,8 @@ export default function Hero() {
                         transition={{ delay: 0.6 }}
                         className={styles.actions}
                     >
-                        <button className={styles.primary}>Start Building</button>
-                        <button className={styles.secondary}>View Methodology</button>
+                        <button className={styles.primary}>View System Architecture</button>
+                        <button className={styles.secondary}>Engineering Capabilities</button>
                     </motion.div>
                 </motion.div>
 
