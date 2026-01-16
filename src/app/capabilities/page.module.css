@@ -1,0 +1,74 @@
+.main {
+    padding-top: 120px;
+    min-height: 100vh;
+    background: var(--background);
+}
+
+.hero {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.title {
+    font-size: 5rem;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    margin-bottom: 2rem;
+    color: #000;
+}
+
+.intro {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    max-width: 800px;
+    color: var(--text-secondary);
+}
+
+.grid {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 6rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+}
+
+.item {
+    padding-top: 2rem;
+    border-top: 1px solid #000;
+    /* Stark black line */
+}
+
+.item h2 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-family: monospace;
+    color: var(--text-secondary);
+}
+
+.item h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    color: #000;
+}
+
+.item p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 90%;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}

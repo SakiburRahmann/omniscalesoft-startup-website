@@ -21,13 +21,14 @@ export default function Navbar() {
                 </Link>
 
                 <div className={styles.links}>
-                    <Link href="/services">Services</Link>
-                    <Link href="/products">Products</Link>
+                    <Link href="/capabilities">Capabilities</Link>
+                    <Link href="/work">Work</Link>
                     <Link href="/method">Method</Link>
                     <Link href="/contact" className={styles.button}>Let&apos;s Talk</Link>
                 </div>
 
                 <button className={styles.mobileToggle} onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
+                    <span className={`${styles.bar} ${isOpen ? styles.open : ''}`}></span>
                     <span className={`${styles.bar} ${isOpen ? styles.open : ''}`}></span>
                     <span className={`${styles.bar} ${isOpen ? styles.open : ''}`}></span>
                 </button>
@@ -41,8 +42,8 @@ export default function Navbar() {
                         exit={{ opacity: 0, height: 0 }}
                         className={styles.mobileMenu}
                     >
-                        <Link href="/services" onClick={() => setIsOpen(false)}>Services</Link>
-                        <Link href="/products" onClick={() => setIsOpen(false)}>Products</Link>
+                        <Link href="/capabilities" onClick={() => setIsOpen(false)}>Capabilities</Link>
+                        <Link href="/work" onClick={() => setIsOpen(false)}>Work</Link>
                         <Link href="/method" onClick={() => setIsOpen(false)}>Method</Link>
                         <Link href="/contact" onClick={() => setIsOpen(false)}>Let&apos;s Talk</Link>
                     </motion.div>

@@ -86,6 +86,7 @@
         flex-direction: column;
         height: auto;
         min-height: 80px;
+        background: rgba(255, 255, 255, 1);
     }
 }
 
@@ -97,6 +98,7 @@
     border: none;
     cursor: pointer;
     z-index: 1001;
+    padding: 10px;
 }
 
 .bar {
@@ -104,35 +106,46 @@
     height: 2px;
     background: #000;
     transition: all 0.3s ease;
+    transform-origin: center;
 }
 
+/* Hamburger to X Animation */
 .open.bar:nth-child(1) {
     transform: rotate(45deg) translate(5px, 6px);
 }
 
 .open.bar:nth-child(2) {
+    opacity: 0;
+}
+
+.open.bar:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -6px);
 }
 
 .mobileMenu {
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    /* Fixed to cover screen */
+    top: 80px;
     left: 0;
     width: 100%;
+    height: calc(100vh - 80px);
+    /* Full height minus header */
     background: #fff;
-    border-bottom: 1px solid var(--border-color);
-    overflow: hidden;
+    border-top: 1px solid var(--border-color);
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    padding: 0;
+    z-index: 999;
 }
 
 .mobileMenu a {
-    padding: 1.5rem;
+    padding: 1.5rem 2rem;
     width: 100%;
-    text-align: center;
+    text-align: left;
     border-bottom: 1px solid var(--border-color);
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     font-weight: 500;
     color: #000;
 }
