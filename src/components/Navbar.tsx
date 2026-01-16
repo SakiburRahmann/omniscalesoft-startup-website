@@ -10,9 +10,9 @@ export default function Navbar() {
 
     return (
         <motion.nav
-            initial={{ y: -100, x: "-50%" }}
-            animate={{ y: 0, x: "-50%" }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className={styles.nav}
         >
             <div className={styles.container}>
