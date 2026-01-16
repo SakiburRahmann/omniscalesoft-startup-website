@@ -75,4 +75,70 @@
         display: none;
         /* Mobile menu needed later */
     }
+}@media (max-width: 768px) {
+    .links {
+        display: none;
+    }
+
+    .mobileToggle {
+        display: flex;
+    }
+    
+    .nav {
+        flex-direction: column;
+        height: auto;
+        min-height: 4.5rem;
+    }
 }
+
+.mobileToggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.bar {
+    width: 24px;
+    height: 2px;
+    background: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.open.bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+
+.open.bar:nth-child(2) {
+    transform: rotate(-45deg) translate(5px, -6px);
+}
+
+.mobileMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    margin-top: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.mobileMenu a {
+    padding: 1.5rem;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+

@@ -40,7 +40,7 @@ export default function Hero() {
                 >
                     {/* Minimalist Blueprint SVG placeholder */}
                     <div className={styles.blueprint}>
-                        <svg viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path d="M50 250 L150 150 L250 180 L350 80 L450 120" stroke="var(--accent)" strokeWidth="2" strokeDasharray="5 5" />
                             <circle cx="50" cy="250" r="4" fill="var(--accent)" />
                             <circle cx="150" cy="150" r="4" fill="var(--accent)" />
